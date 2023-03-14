@@ -115,3 +115,5 @@ dist
 #DS.store
 .DS_store
 football.csv
+
+db.json

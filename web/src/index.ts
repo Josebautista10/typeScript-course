@@ -4,6 +4,16 @@ const user = new User({ name: 'John', age: 26 })
 
 user.set({ age: 55 })
 
-user.on('click', () => {})
+user.on('change', () => {
+  console.log('change 1')
+})
+user.on('change', () => {
+  console.log('change 2')
+})
 
-console.log(user.events);
+user.on('save', () => {
+  console.log('this is save')
+})
+
+user.trigger('save')
+console.log(user.events)
