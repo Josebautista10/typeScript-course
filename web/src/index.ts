@@ -1,6 +1,14 @@
 // all the users are getting pushed to db.json using json-server
 import { User } from './models/User'
-// axios.get(`http://localhost:3000/users/${this.get('id')}`)
-// const user = new User({ name: 'testing adding a user', age: 5 })
-// user.save()
-// console.log(user)
+const user = new User({ name: 'testing adding a user', age: 5 })
+
+console.log(user.get('name'))
+
+user.on('change' , () => {
+  console.log('this is the change event on the user');
+})
+
+user.trigger('change')
+
+user.set({name: 'newName23'})
+
