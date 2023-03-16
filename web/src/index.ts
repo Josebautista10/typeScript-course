@@ -1,11 +1,8 @@
 // all the users are getting pushed to db.json using json-server
 import { User } from './models/User'
-const user = new User({ id: 1, name: 'newername', age: 21 })
+import { UserForm } from './views/UserForm'
+const user = User.buildUser({ name: 'hey', age: 20 })
+const userForm = new UserForm(document.getElementById('root')!, user)
 
-console.log(user.get('name'))
-
-user.on('save', () => {
-  console.log(user)
-})
-
-user.save()
+console.log(userForm)
+userForm.render()
